@@ -47,22 +47,35 @@ def sum_digits_calculated(lista: list) -> int:
 
 
 def is_happy(num: int) -> bool:
+    final_number = num
+
     if type(num) is not int:
         return False
 
-    string = str(num)
-    digits = []
+    seen_numbers = []
+    while final_number != 1:
+        # print(final_number)
+        digits = map_number(str(final_number))
+        final_number = sum_digits_calculated(digits)
 
-    if len(string) == 1:
-        result = calc_pow(num)
-    else:
-        digits = map_number(string)
+        if final_number in seen_numbers:
+            return False
 
+        seen_numbers.append(final_number)
+
+    # print(final_number)
     return True
 
 
 def main():
-    print("Hello World!")
+    nums = [4, 123, 19, 32]
+    for n in nums:
+        print(n)
+        result = is_happy(n)
+        if result:
+            print("Número Feliz")
+        else:
+            print("Número Triste")
 
 
 if __name__ == '__main__':

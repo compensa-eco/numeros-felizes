@@ -31,6 +31,11 @@ class TestHappyFunction(unittest.TestCase):
         total = sum_digits_calculated(result)
         self.assertEqual(total, 97)
 
+    def test_function_unhappy(self):
+        num = 2
+        number_is_happy = is_happy(num)
+        self.assertFalse(number_is_happy)
+
 
 if __name__ == '__main__':
     unittest.main()
