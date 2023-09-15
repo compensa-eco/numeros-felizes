@@ -68,7 +68,7 @@ def is_happy(num: int) -> bool:
 
 
 def main():
-    nums = [4, 123, 19, 32]
+    nums = [4, 123, 19, 32, '4']
     for n in nums:
         print(n)
         result = is_happy(n)
